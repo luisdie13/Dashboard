@@ -1,0 +1,183 @@
+.logs-table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  background: white;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.logs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.logs-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  position: sticky;
+  top: 0;
+}
+
+.logs-table th {
+  padding: 1rem;
+  border-bottom: 2px solid #ddd;
+  white-space: nowrap;
+}
+
+.logs-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.logs-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.logs-table td {
+  padding: 0.75rem 1rem;
+}
+
+.logs-table .timestamp {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.logs-table .nodo-id {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.logs-table .vatios,
+.logs-table .voltaje {
+  font-weight: 500;
+  text-align: right;
+}
+
+.logs-table .status {
+  font-weight: 600;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.logs-table .status-200 {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.logs-table .status-400 {
+  background: #feebc8;
+  color: #7c2d12;
+}
+
+.logs-table .status-500 {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.logs-table .criticidad {
+  text-align: center;
+}
+
+.logs-table .badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.criticidad-info .badge {
+  background: #c3dafe;
+  color: #3c366b;
+}
+
+.criticidad-warning .badge {
+  background: #feebc8;
+  color: #7c2d12;
+}
+
+.criticidad-error .badge {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.logs-table tbody tr.criticality-info {
+  border-left: 3px solid #4299e1;
+}
+
+.logs-table tbody tr.criticality-warning {
+  border-left: 3px solid #ed8936;
+}
+
+.logs-table tbody tr.criticality-error {
+  border-left: 3px solid #f56565;
+  background-color: #fff5f5;
+}
+
+.logs-table tbody tr.criticality-error:hover {
+  background-color: #ffe0e0;
+}
+
+.logs-table .mensaje {
+  color: #666;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-logs {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #999;
+  font-size: 1rem;
+  background: white;
+  border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+  .logs-table {
+    font-size: 0.85rem;
+  }
+
+  .logs-table th,
+  .logs-table td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .logs-table .mensaje {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logs-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .logs-table {
+    font-size: 0.8rem;
+  }
+
+  .logs-table th,
+  .logs-table td {
+    padding: 0.5rem;
+  }
+
+  .logs-table .timestamp {
+    font-size: 0.7rem;
+  }
+
+  .logs-table .mensaje {
+    display: none;
+  }
+}
