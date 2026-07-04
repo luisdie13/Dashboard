@@ -5,9 +5,12 @@ const { Server } = require('socket.io');
  */
 class SocketManager {
   constructor(httpServer) {
+    const rawOrigin = process.env.CORS_ORIGIN || 'http://localhost:3001';
+    const corsOrigins = rawOrigin.split(',').map((o) => o.trim());
+
     this.io = new Server(httpServer, {
       cors: {
-        origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+        origin: corsOrigins.length === 1 ? corsOrigins[0] : corsOrigins,
         credentials: true,
       },
     });

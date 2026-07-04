@@ -23,6 +23,15 @@ class MetricController {
         mensaje || 'No message'
       );
 
+      // Emitir via socketManager desde el ciclo de vida de la petición (solución escalable sin variables globales)
+      const socketManager = req.app.locals.socketManager;
+      if (socketManager) {
+        socketManager.emitNewMetric(metric.nodo_id, metric);
+        if (metric.criticidad === 'error') {
+          socketManager.emitCriticalAlert(metric.nodo_id, metric);
+        }
+      }
+
       res.status(201).json(metric);
     } catch (error) {
       res.status(400).json({ error: 'Error recording metric' });

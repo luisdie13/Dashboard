@@ -38,7 +38,7 @@ function LogsTable({ logs }) {
           </thead>
           <tbody>
             {logs.map((log, index) => (
-              <tr key={index} className={getCriticalityClass(log.criticidad)}>
+              <tr key={`${log.nodo_id}-${log.timestamp}-${index}`} className={getCriticalityClass(log.criticidad)}>
                 <td className="timestamp">{formatDate(log.timestamp)}</td>
                 <td className="nodo-id">{log.nodo_id}</td>
                 <td className="vatios">{log.vatios_generados?.toFixed(2) || 'N/A'}</td>

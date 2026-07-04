@@ -52,6 +52,12 @@ class NodeController {
       }
 
       const updatedNode = await this.nodeService.updateNodeEstado(id, estado);
+
+      const socketManager = req.app.locals.socketManager;
+      if (socketManager) {
+        socketManager.emitNodeStatusUpdate(id, { estado, nombre: updatedNode.nombre });
+      }
+
       res.status(200).json(updatedNode);
     } catch (error) {
       res.status(404).json({ error: 'Node not found' });

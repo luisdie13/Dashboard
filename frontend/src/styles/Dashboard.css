@@ -194,6 +194,53 @@
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+/* Date Range Quick Buttons */
+.date-range-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.date-range-buttons button {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.date-range-buttons button:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Apply Filters Button */
+.btn-apply {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.btn-apply:hover {
+  background-color: #5a6fd6;
+}
+
+.filter-actions {
+  align-self: flex-end;
+}
+
 @media (max-width: 1024px) {
   .charts-section {
     grid-template-columns: 1fr;

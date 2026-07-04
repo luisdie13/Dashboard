@@ -30,6 +30,12 @@ export const socketService = {
     }
   },
 
+  off: (event, callback) => {
+    if (socket) {
+      socket.off(event, callback);
+    }
+  },
+
   emit: (event, data) => {
     if (socket) {
       socket.emit(event, data);
